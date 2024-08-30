@@ -3,6 +3,10 @@
   "version": "1.0.0",
   "description": "Generate names from predefined lists",
   "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Bippitee/namegen.git"
+  },
   "keywords": [
     "Name",
     "generator",
