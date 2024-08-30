@@ -5,10 +5,11 @@ import { nouns } from "./nouns";
 /**
  * Generates a name by combining words from two arrays.
  *
- * @param {string} [delimiter=""] - The delimiter to use between words.
- * @param {string[]} [words1=adjectives] - The first array of words. Defaults to adjectives.
- * @param {string[]} [words2=woodland ? woodlandCreatures : nouns] - The second array of words. Defaults to nouns or woodland creatures based on the woodland flag.
- * @param {boolean} [woodland=false] - Whether to use woodland creatures as the second array of words.
+ * @param {Object} [options] - The options for generating the name.
+ * @param {string} [options.delimiter=""] - The delimiter to use between words.
+ * @param {boolean} [options.woodland=false] - Whether to use woodland creatures as the second array of words.
+ * @param {string[]} [options.words1=adjectives] - The first array of words. Defaults to adjectives.
+ * @param {string[]} [options.words2=options.woodland ? woodlandCreatures : nouns] - The second array of words. Defaults to nouns or woodland creatures based on the woodland flag.
  * @returns {string} - The generated name.
  *
  * @example
@@ -17,18 +18,18 @@ import { nouns } from "./nouns";
  *
  * @example
  * // Using a custom delimiter
- * generateName("-", false, ["quick", "lazy"], ["fox", "dog"]);
+ * generateName({ delimiter: "-" });
  *
  * @example
  * // Using woodland creatures
- * generateName("", true);
+ * generateName({ woodland: true });
  */
-function generateName(
+function generateName({
   delimiter = "",
+  woodland = false,
   words1 = adjectives,
   words2 = woodland ? woodlandCreatures : nouns,
-  woodland = false
-) {
+} = {}) {
   if (typeof delimiter !== "string") {
     delimiter = "";
   }
@@ -64,6 +65,8 @@ function generateName(
   return capitalizedName1 + delimiter + capitalizedName2;
 }
 
+export default generateName;
+
 /**
  * Returns a random integer between min (inclusive) and max (exclusive).
  *
@@ -74,5 +77,3 @@ function generateName(
 function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min)) + min;
 }
-
-module.exports = generateName;

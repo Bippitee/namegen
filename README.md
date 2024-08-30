@@ -1,6 +1,6 @@
 # @foxandbear/namegen
 
-# Generate whimsical names from predefined lists of words.
+Generate whimsical names from predefined lists of words.
 
 ## Installation
 
@@ -32,7 +32,7 @@ You can specify a custom delimiter to use between words:
 const generateName = require("@foxandbear/namegen");
 
 // Generate a name with a hyphen as the delimiter
-const name = generateName("-");
+const name = generateName({ delimiter: "-" });
 console.log(name); // Example output: "Quick-Fox"
 ```
 
@@ -44,7 +44,7 @@ You can generate names using woodland creatures:
 const generateName = require("@foxandbear/namegen");
 
 // Generate a name using woodland creatures
-const name = generateName("", true);
+const name = generateName({ woodland: true });
 console.log(name); // Example output: "QuickSquirrel"
 ```
 
@@ -59,13 +59,13 @@ const adjectives = ["happy", "sad", "angry"];
 const animals = ["lion", "tiger", "bear"];
 
 // Generate a name using custom word lists
-const name = generateName("", false, adjectives, animals);
+const name = generateName({ words1: adjectives, words2: animals });
 console.log(name); // Example output: "HappyLion"
 ```
 
 ## API
 
-`generateName(delimiter = "", woodland = false, words1 = adjectives, words2 = woodland ? woodlandCreatures : nouns)`
+`generateName({delimiter = "", woodland = false, words1 = adjectives, words2 = woodland ? woodlandCreatures : nouns})`
 
 Generates a name by combining words from two arrays.
 
