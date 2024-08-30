@@ -1,7 +1,7 @@
 {
   "name": "@foxandbear/namegen",
   "version": "1.0.0",
-  "description": "Generate names from predefined lists",
+  "description": "Generate names from predefined lists, or add your own!",
   "main": "index.js",
   "repository": {
     "type": "git",

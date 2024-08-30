@@ -1,4 +1,4 @@
-export const woodlandCreatures = [
+const woodlandCreatures = [
   "squirrel",
   "deer",
   "rabbit",
@@ -666,3 +666,5 @@ export const woodlandCreatures = [
   "tern",
   "skua",
 ];
+
+module.exports = woodlandCreatures;

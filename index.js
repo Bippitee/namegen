@@ -1,7 +1,6 @@
-import { adjectives } from "./adjectives";
-import { woodlandCreatures } from "./woodlandCreatures";
-import { nouns } from "./nouns";
-
+const adjectives = require("./adjectives");
+const woodlandCreatures = require("./woodlandCreatures");
+const nouns = require("./nouns");
 /**
  * Generates a name by combining words from two arrays.
  *
@@ -65,7 +64,7 @@ function generateName({
   return capitalizedName1 + delimiter + capitalizedName2;
 }
 
-export default generateName;
+module.exports = generateName;
 
 /**
  * Returns a random integer between min (inclusive) and max (exclusive).

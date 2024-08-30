@@ -1,4 +1,4 @@
-export const adjectives = [
+const adjectives = [
   "abandoned",
   "able",
   "absolute",
@@ -1341,3 +1341,5 @@ export const adjectives = [
   "zigzag",
   "rocky",
 ];
+
+module.exports = adjectives;

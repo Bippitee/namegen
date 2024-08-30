@@ -1,4 +1,4 @@
-export const nouns = [
+const nouns = [
   "person",
   "history",
   "way",
@@ -1498,3 +1498,5 @@ export const nouns = [
   "wrap",
   "yesterday",
 ];
+
+module.exports = nouns;
