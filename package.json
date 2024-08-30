@@ -1,0 +1,14 @@
+{
+  "name": "@foxandbear/namegen",
+  "version": "1.0.0",
+  "description": "Generate names from predefined lists",
+  "main": "index.js",
+  "keywords": [
+    "Name",
+    "generator",
+    "whimsical",
+    "namegen"
+  ],
+  "author": "Ben Carragher",
+  "license": "ISC"
+}
