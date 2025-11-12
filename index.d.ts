@@ -4,6 +4,7 @@ declare module "@foxandbear/namegen" {
     woodland?: boolean;
     words1?: string[];
     words2?: string[];
+    seed: string | number;
   }
 
   function generateName(options?: GenerateNameOptions): string;
