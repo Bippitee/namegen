@@ -63,9 +63,26 @@ const name = generateName({ words1: adjectives, words2: animals });
 console.log(name); // Example output: "HappyLion"
 ```
 
+### Using a Seed for Deterministic Generation
+
+You can provide a seed string to generate the same name consistently:
+
+```javascript
+const generateName = require("@foxandbear/namegen");
+
+// Generate a name using a seed (will always produce the same result)
+const name1 = generateName({ seed: "my-project-name" });
+const name2 = generateName({ seed: "my-project-name" });
+console.log(name1 === name2); // true - both names will be identical
+
+// Different seeds produce different names
+const name3 = generateName({ seed: "different-seed" });
+console.log(name3); // Different from name1 and name2
+```
+
 ## API
 
-`generateName({delimiter = "", woodland = false, words1 = adjectives, words2 = woodland ? woodlandCreatures : nouns})`
+`generateName({delimiter = "", woodland = false, words1 = adjectives, words2 = woodland ? woodlandCreatures : nouns, seed})`
 
 Generates a name by combining words from two arrays.
 
@@ -75,6 +92,7 @@ Generates a name by combining words from two arrays.
 - `woodland` (boolean, optional): Whether to use woodland creatures as the second array of words. Defaults to false.
 - `words1` (string[], optional): The first array of words. Defaults to adjectives.
 - `words2` (string[], optional): The second array of words. Defaults to nouns or woodland creatures based on the woodland flag.
+- `seed` (string, optional): Optional seed for deterministic random generation. If provided, the same seed will always produce the same name.
 
 #### Returns
 
